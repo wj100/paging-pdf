@@ -1,0 +1,39 @@
+{
+  "name": "fenye-pdf",
+  "version": "1.0.9",
+  "description": "fenye pdf",
+  "author": "wangjun <wj@wangjun.work>",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "build": "webpack --progress --hide-modules"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wj100/fenye-pdf.git"
+  },
+  "keywords": [
+    "分页",
+    "pdf"
+  ],
+  "bugs": {
+    "url": "https://github.com/wj100/fenye-pdf/issues"
+  },
+  "homepage": "https://github.com/wj100/fenye-pdf/blob/main/README.md",
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ],
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-stage-3": "^6.24.1",
+    "prettier": "^1.12.1",
+    "webpack": "^3.6.0",
+    "html2canvas": "^1.3.3",
+    "jspdf": "^2.4.0"
+  }
+}
