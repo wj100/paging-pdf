@@ -7,7 +7,7 @@ module.exports = {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
     filename: 'index.js',
-    library: 'pagingPdf',
+    library: 'fenyePdf',
     libraryTarget: 'umd',
     umdNamedDefine: true
   },

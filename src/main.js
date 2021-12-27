@@ -31,7 +31,7 @@ function detectZoom() {
     }
     return ratio / 100;
 }
- function pagingPdf(filename, selector) {
+ function fenyePdf(filename, selector) {
     const els = document.querySelectorAll(selector);
     let pdf = new jsPDF("l", "pt", [1280, 720]); //横屏
     let success = [];
@@ -91,4 +91,4 @@ function detectZoom() {
     });
 }
 
-export default pagingPdf
+export default fenyePdf

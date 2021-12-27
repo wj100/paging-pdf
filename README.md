@@ -1,19 +1,19 @@
-# paging-pdf
+# fenye-pdf
 
 > 前端pdf分页下载
->
+> 暂时只支持横屏
 
 ## 使用方法
 
 ###  1. 安装
 
 ```bash
-yarn add paging-pdf
+yarn add fenye-pdf
 ```
 ###  1. 使用
 ```js
-import pagingPdf from 'paging-pdf';
-pagingPdf(fileName,selector)
+import fenyePdf from 'fenye-pdf';
+fenyePdf(fileName,selector)
 ```
 
 ### 3.Attributes
