@@ -1,6 +1,6 @@
-# auto-size-echart  
+# paging-pdf
 
-> 根据容器大小自动缩放echarts
+> 前端pdf分页下载
 >
 ## 本地测试
 App.vue为测试页面
