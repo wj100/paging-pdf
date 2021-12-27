@@ -1,7 +1,7 @@
 {
-  "name": "fenye-pdf",
+  "name": "paging-pdf",
   "version": "1.1.0",
-  "description": "fenye pdf",
+  "description": "纯前端实现pdf分页下载",
   "author": "wangjun <wj@wangjun.work>",
   "main": "dist/index.js",
   "license": "MIT",
@@ -11,16 +11,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/wj100/fenye-pdf.git"
+    "url": "https://github.com/wj100/paging-pdf.git"
   },
   "keywords": [
     "分页",
     "pdf"
   ],
   "bugs": {
-    "url": "https://github.com/wj100/fenye-pdf/issues"
+    "url": "https://github.com/wj100/paging-pdf/issues"
   },
-  "homepage": "https://github.com/wj100/fenye-pdf/blob/main/README.md",
+  "homepage": "https://github.com/wj100/paging-pdf/blob/main/README.md",
   "browserslist": [
     "> 1%",
     "last 2 versions",
