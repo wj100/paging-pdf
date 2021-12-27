@@ -1,6 +1,6 @@
 {
   "name": "paging-pdf",
-  "version": "1.0.9",
+  "version": "1.0.1",
   "description": "paging pdf",
   "author": "wangjun <wj@wangjun.work>",
   "main": "dist/index.js",
