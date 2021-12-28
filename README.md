@@ -1,7 +1,7 @@
 # paging-pdf
 
 > 前端pdf分页下载
-> 暂时只支持横屏
+> 默认竖屏
 
 ## 使用方法
 
@@ -22,3 +22,4 @@ pagingPdf(fileName,selector)
 | :----------: | :-----: | :-----------------------------------------: |
 |     fileName     | string |     下载文件名     |
 |     selector     | string |     分页容器className,以此分页 **例：.pdf-content**     |
+|     direction     | string |    'l'为横屏，默认'p'(竖屏)     |
