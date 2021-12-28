@@ -7,6 +7,14 @@ import jsPDF from 'jspdf';
  * @param {string:'l'|'p'} direction l代表横向，p代表纵向
  * @returns 
  */
+const sizeMap={
+    l:[1280,720],
+    p:'a4'
+}
+const widthMap={
+    l:1280,
+    p:555.28
+}
 /* 获取屏幕缩放比例 */
 function detectZoom() {
     var ratio = 0,
@@ -31,9 +39,9 @@ function detectZoom() {
     }
     return ratio / 100;
 }
- function pagingPdf(filename, selector) {
+ function pagingPdf(filename, selector,direction='p') {
     const els = document.querySelectorAll(selector);
-    let pdf = new jsPDF("l", "pt", [1280, 720]); //横屏
+    let pdf = new jsPDF(direction, "pt", sizeMap[direction]); //横屏
     let success = [];
     for (let i = 0, len = els.length; i < len; i++) {
         success.push(0);
@@ -65,8 +73,7 @@ function detectZoom() {
             html2canvas(html, opts)
                 .then((canvas) => {
                     let pageData = canvas.toDataURL("image/jpeg", 1.0); // 清晰度 0 - 1
-                    console.log(11110000, canvas);
-                    let imgWidth = 1280; //a4 555.28
+                    let imgWidth = widthMap[direction]; //a4 555.28
                     let imgHeight = (imgWidth / contentWidth) * contentHeight;
                     // pdf.addImage(pageData, 'JPEG', 左，上，宽度，高度)设置
                     pdf.addImage(pageData, "JPEG", 0, 0, imgWidth, imgHeight);
@@ -76,7 +83,7 @@ function detectZoom() {
                 .then((item) => {
                     success[index] = item;
                     /* 每项都为1  则保存 */
-                    if (success.every((_) => _ === 1)) {
+                    if (success.every(_ => _ === 1)) {
                         /* 删除多余空白页 */
                         pdf.deletePage(els.length + 1);
                         pdf.save(filename);
