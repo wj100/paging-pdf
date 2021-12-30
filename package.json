@@ -1,6 +1,6 @@
 {
     "name": "paging-pdf",
-    "version": "1.1.5",
+    "version": "1.2.0",
     "description": "纯前端实现pdf分页下载",
     "author": "wangjun <wj@wangjun.work>",
     "main": "dist/main.js",

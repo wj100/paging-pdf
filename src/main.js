@@ -17,7 +17,7 @@ const widthMap={
 }
 /* 获取屏幕缩放比例 */
 function detectZoom() {
-    var ratio = 0,
+    let ratio = 0,
         screen = window.screen,
         ua = navigator.userAgent.toLowerCase();
 
@@ -42,10 +42,10 @@ function detectZoom() {
  function pagingPdf(filename, selector,direction='p') {
     const els = document.querySelectorAll(selector);
     if (els.length===0){
-        throw new Error("element is not find by "+selector)
+        throw new Error("[paging-pdf] element is not find by "+selector)
     }
     if(!['l','p'].includes(direction)){
-        throw new Error("invalid params, 'direction' must be 'l' or 'p'")
+        throw new Error("[paging-pdf] invalid params, 'direction' must be 'l' or 'p'")
     }
     let pdf = new jsPDF(direction, "pt", sizeMap[direction]); 
     let success = [];
@@ -64,12 +64,10 @@ function detectZoom() {
                 contentHeight = html.clientHeight * ratio;
             }
             let canvas = document.createElement("canvas");
-            let scale = 1; // 解决清晰度问题，先放大 2倍
-            canvas.width = contentWidth * scale; // 将画布宽&&高放大两倍
+            let scale = 1; 
+            canvas.width = contentWidth * scale; 
             canvas.height = contentHeight * scale;
-            //兼容mac缩放
             canvas.getContext("2d").scale(scale, scale);
-            // isMac ? canvas.getContext("2d") : canvas.getContext("2d").scale(scale, scale);
             let opts = {
                 canvas: canvas,
                 width: contentWidth,
@@ -79,7 +77,7 @@ function detectZoom() {
             html2canvas(html, opts)
                 .then((canvas) => {
                     let pageData = canvas.toDataURL("image/jpeg", 1.0); // 清晰度 0 - 1
-                    let imgWidth = widthMap[direction]; //a4 555.28
+                    let imgWidth = widthMap[direction]; 
                     let imgHeight = (imgWidth / contentWidth) * contentHeight;
                     // pdf.addImage(pageData, 'JPEG', 左，上，宽度，高度)设置
                     pdf.addImage(pageData, "JPEG", 0, 0, imgWidth, imgHeight);
