@@ -41,7 +41,13 @@ function detectZoom() {
 }
  function pagingPdf(filename, selector,direction='p') {
     const els = document.querySelectorAll(selector);
-    let pdf = new jsPDF(direction, "pt", sizeMap[direction]); //横屏
+    if (els.length===0){
+        throw new Error("element is not find by "+selector)
+    }
+    if(!['l','p'].includes(direction)){
+        throw new Error("invalid params, 'direction' must be 'l' or 'p'")
+    }
+    let pdf = new jsPDF(direction, "pt", sizeMap[direction]); 
     let success = [];
     for (let i = 0, len = els.length; i < len; i++) {
         success.push(0);
@@ -86,7 +92,7 @@ function detectZoom() {
                     if (success.every(_ => _ === 1)) {
                         /* 删除多余空白页 */
                         pdf.deletePage(els.length + 1);
-                        pdf.save(filename);
+                        pdf.save(String(filename));
                         resolve(true);
                     }
                     if (index < els.length - 1) {
